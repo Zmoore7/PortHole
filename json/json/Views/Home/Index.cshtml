@@ -1,0 +1,153 @@
+﻿@model json.Models.car
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Car Crashers</h1>
+    <p class="lead">You enter your car... We crash it!!!!</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">CARCARCAR &raquo;</a></p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <form id="entry" method="post" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+            <div class="form-group">
+                <label for="make" class="control-label">Vehicle Make</label>
+                    @Html.TextBoxFor(c => c.make, null, new Dictionary<string, object>() { { "class", "form-control" } }) <span id="errorMake"></span>                    
+            </div>
+            <div class="form-group" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                <label for="model" class="control-label">Vehicle Model</label>
+                    @Html.TextBoxFor(c => c.model, null, new Dictionary<string, object>() { { "class", "form-control" } }) <span id="errorModel"></span> 
+                
+            </div>
+            <div class="form-group" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                <label for="year" class="control-label">Vehicle Year</label>
+                    @Html.TextBoxFor(c => c.year, null, new Dictionary<string, object>() { { "class", "form-control" } }) <span id="errorYear"></span> 
+
+            </div>
+            <div class="form-group" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                <label for="vin" class="control-label">Vehicle Vin#</label>
+                    @Html.TextBoxFor(c => c.vin, null, new Dictionary<string, object>() { { "class", "form-control" } }) <span id="errorVin"></span> 
+                
+            </div>
+
+            <input type="button" id="SubmitCar" class="btn btn-primary btn-lg" value="Submit" />
+        </form>
+    </div>
+
+
+    <div class="col-md-6 returns">
+            <p id="dispMake">Make: </p>
+            <p id="dispModel">Model:</p>
+            <p id="dispYear">Year:</p>
+            <p id="dispVin">Vin:</p>
+</div>
+</div>
+
+
+@section Scripts{
+
+    <script>
+        //click event
+        $('#SubmitCar').on("click", function () {
+            
+
+            var make = $("#make").val().toLowerCase();
+            var makeIsComplete = false;
+
+            var model = $('#model').val().toLowerCase();
+            var modelIsComplete = false;
+
+            var year = parseInt($('#year').val());
+            var yearIsComplete = false;
+
+            var vin = $('#vin').val().toLowerCase();
+            var vinIsComplete = false;
+
+            var errorMsg = "This is not valid";
+
+            //validate if entry is not null or empty
+      
+            if ((make != "") && (make != null)) {
+                $("#make").parent().removeClass("has-error");
+                $("#errorMake").text("");
+                makeIsComplete = true;
+            }
+            else {
+                $("#make").parent().addClass("has-error");
+                $("#errorMake").html(errorMsg).append(" enter make");        
+            }
+    
+            if (model != "") {
+                $("#model").parent().removeClass("has-error");
+                $("#errorModel").text("");
+                modelIsComplete = true;
+            }
+            else {
+                $("#model").parent().addClass("has-error");
+                $("#errorModel").html(errorMsg).append(" enter model");
+            }
+
+            var checkYear = year.toString();
+            if (!isNaN(year) && checkYear.length == 4) {
+                $("#year").parent().removeClass("has-error");
+                $("#errorYear").text("");
+                yearIsComplete = true;
+            
+            }
+            else {
+                $("#year").parent().addClass("has-error");
+                $("#errorYear").html(errorMsg).append(" enter year (format ex.19xx)");
+            }
+ 
+            if (vin != "" && vin.length == 10) {
+                $("#vin").parent().removeClass("has-error");
+                $("#errorVin").text("");
+                vinIsComplete = true;
+            }
+            else {
+                $("#vin").parent().addClass("has-error");
+                $("#errorVin").html(errorMsg).append(" enter vin# (10-digits)");
+            }
+   
+
+            //only pass true validation to server post
+            if (makeIsComplete != false && modelIsComplete != false && yearIsComplete != false && vinIsComplete != false) {
+                var myCar = {
+                    make: make
+                    , model: model
+                    , year: year
+                    , vin: vin
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/CarMaker",
+                    traditional: true,
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(myCar),
+                    dataType: "json",
+                    success: function (result) {
+                        $("#dispMake").html(result.make).prepend("Make: ");
+                        $("#dispModel").html(result.model).prepend("Model: ");
+                        $("#dispYear").html(result.year).prepend("Year: ");
+                        $("#dispVin").html(result.vin).prepend("Vin #: ");
+                        console.dir(result);
+                        console.log("return all good");
+                    },
+                    error: function (result) {
+                        console.log(data)
+                    }
+                });
+                $(".returns").addClass("colorBkg");
+                $("#model").val("");
+                $("#make").val("");
+                $("#year").val("");
+                $("#vin").val("");
+            };
+        });
+
+    </script>
+}
