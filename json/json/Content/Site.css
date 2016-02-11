@@ -5,8 +5,10 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    color: white;
     padding-left: 15px;
     padding-right: 15px;
+    color: white;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,5 +26,19 @@ textarea {
 }
 
 .colorBkg {
+    background-color: aqua;
+}
+
+.jumbotron {
+    background-color: transparent;
+    color: white;
+}
+
+
+footer {
+    color: white;
+}
+
+#SubmitCar {
     background-color: aqua;
 }
