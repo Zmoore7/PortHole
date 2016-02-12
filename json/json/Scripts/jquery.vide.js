@@ -285,9 +285,9 @@
     }
 
     // If a parent element has a static position, make it relative
-    if ($element.css('position') === 'static') {
-      $element.css('position', 'relative');
-    }
+    //if ($element.css('position') === 'static') {
+    //  $element.css('position', 'relative');
+    //}
 
     $element.prepend($wrapper);
 

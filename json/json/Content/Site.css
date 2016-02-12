@@ -1,6 +1,5 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -8,9 +7,11 @@
     color: white;
     padding-left: 15px;
     padding-right: 15px;
-    color: white;
+    padding-bottom: 20px
 }
+.container {
 
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -30,6 +31,7 @@ textarea {
 }
 
 .jumbotron {
+    margin-bottom: 50px;
     background-color: transparent;
     color: white;
 }
@@ -41,4 +43,14 @@ footer {
 
 #SubmitCar {
     background-color: aqua;
+}
+
+#dispMake, #dispModel, #dispYear, #dispVin {
+    font-size: 25px;
+}
+
+.slwd_bt {
+    background-color: transparent;
+   float: left;
+   padding-top: 50px;
 }
