@@ -178,6 +178,9 @@ a:focus {
     }
 
     .intro .intro-body .brand-heading {
+        font-size: 73px;
+    }
+    .intro .intro-body .brand-heading span{
         font-size: 100px;
     }
 
