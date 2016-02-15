@@ -9,7 +9,7 @@ namespace json.Models
     [Serializable]
     public class car
     {
-
+  
         public int year { get; set; }
         public string model { get; set; }
         public string make { get; set; }

@@ -184,13 +184,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\downloads-bg.jpg" />
+    <Content Include="images\hair85 %281%29.png" />
     <Content Include="images\intro-bg.jpg" />
     <Content Include="images\map-marker.png" />
+    <Content Include="images\ocean.jpg" />
+    <Content Include="images\ocean.mp4" />
+    <Content Include="images\surfer-371224_960_720.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\grayscale.js" />
     <Content Include="js\jquery.easing.min.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.vide.js" />
+    <Content Include="js\jquery.vide.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -267,6 +273,10 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\ocean.ogv" />
+    <Content Include="images\ocean.webm" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
