@@ -164,6 +164,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GuestContact.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -237,10 +238,7 @@
     <Content Include="images\downloads-bg.jpg" />
     <Content Include="images\electric_bulb_hd_stock_video.mp4" />
     <Content Include="images\hair85 %281%29.png" />
-    <Content Include="images\intro-bg.jpg" />
     <Content Include="images\map-marker.png" />
-    <Content Include="images\ocean.jpg" />
-    <Content Include="images\ocean.mp4" />
     <Content Include="images\snow_bench_looping_background_hd_stock_video.mp4" />
     <Content Include="images\surfer-371224_960_720.jpg" />
     <Content Include="js\bootstrap.js" />
@@ -253,10 +251,31 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\NewPort.csprojResolveAssemblyReference.cache" />
     <Content Include="bin\NewPort.dll.config" />
+    <Content Include="sass\grayscale.css.map">
+      <DependentUpon>grayscale.css</DependentUpon>
+    </Content>
+    <Content Include="sass\grayscale.min.css">
+      <DependentUpon>grayscale.css</DependentUpon>
+    </Content>
+    <Content Include="sass\grayscale.rtl.css.map">
+      <DependentUpon>grayscale.rtl.css</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.vide.min.js.map">
+      <DependentUpon>jquery.vide.min.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="obj\Debug\NewPort.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\NewPort.dll" />
     <Content Include="obj\Debug\NewPort.pdb" />
+    <Content Include="sass\grayscale.css">
+      <DependentUpon>grayscale.scss</DependentUpon>
+    </Content>
+    <Content Include="sass\grayscale.rtl.css">
+      <DependentUpon>grayscale.css</DependentUpon>
+    </Content>
+    <Content Include="sass\grayscale.rtl.min.css">
+      <DependentUpon>grayscale.rtl.css</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -342,10 +361,6 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\ocean.ogv" />
-    <Content Include="images\ocean.webm" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\GuestContacts\Create.cshtml" />

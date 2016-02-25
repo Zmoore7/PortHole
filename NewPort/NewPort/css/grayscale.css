@@ -163,7 +163,6 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background-image: url(/images/intro-bg.jpg);
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -393,5 +392,3 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
-
-
